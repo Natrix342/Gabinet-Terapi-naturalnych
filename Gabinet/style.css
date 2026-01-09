@@ -1,0 +1,207 @@
+/* ===== GLOBAL ===== */
+
+body {
+  background-color: #f3f2e9;
+  color: #2f3e2f;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+section, .contact-short, .contact, .qi-box, .service-box, .map-section {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  padding: 40px 0;
+}
+
+/* ===== HEADER ===== */
+
+header {
+  background-color: #5c7a5b;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+nav a {
+  color: #f3f2e9;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #d4e8d4;
+}
+
+/* ===== HERO ===== */
+
+.hero-nature {
+  background-image: url('nature.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-text {
+  background-color: rgba(255,255,255,0.7);
+  padding: 20px 40px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* ===== QUICK INFO ===== */
+
+.quick-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 40px;
+  text-align: center;
+}
+
+.qi-box {
+  background-color: #ffffff;
+  border: 2px solid #d4e8d4;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* ===== CTA ===== */
+
+.cta {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #5c7a5b;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.cta-btn:hover {
+  background-color: #4a634a;
+}
+
+/* ===== MAPA ===== */
+
+.map-header {
+  background-color: #5c7a5b;
+  color: white;
+  padding: 8px 10px;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 8px 8px 0 0;
+  
+}
+
+.map-section {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.map-section iframe {
+  border: 3px solid #d4e8d4;
+  border-radius: 0 0 12px 12px;
+}
+
+/* ===== KONTAKT ===== */
+
+.contact-short, .contact {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 2px solid #d4e8d4;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #5c7a5b;
+  color: white;
+}
+
+/* ===== USŁUGI ===== */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 40px;
+}
+
+.service-box {
+  background-color: #ffffff;
+  border: 2px solid #d4e8d4;
+  border-radius: 14px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.service-box input {
+  display: none;
+}
+
+.service-title {
+  display: block;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #4f6d4f;
+  cursor: pointer;
+}
+
+.service-desc {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.service-box input:checked ~ .service-desc {
+  max-height: 500px;
+  padding: 20px;
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 900px) {
+  .quick-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .quick-info, .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
